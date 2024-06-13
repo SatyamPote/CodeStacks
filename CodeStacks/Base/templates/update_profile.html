@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="{% static 'update_profile.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Update Profile</h2>
+        <form action="{% url 'update_profile' user.id %}" method="post">
+            {% csrf_token %}
+            <div class="show-password">
+                <input type="email" name="email" value="{{ user.email }}" placeholder="Email" required>
+            </div>
+            <center><input type="submit" value="Update"></center>
+        </form>
+    </div>
+</body>
+</html>

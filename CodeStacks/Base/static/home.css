@@ -1,0 +1,61 @@
+/* CSS for navigation bar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.profile {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile a {
+    margin-left: 10px;
+}
+
+.profile .fa-user {
+    font-size: 30px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .profile {
+        margin-top: 10px; /* Add some space between navigation and profile */
+    }
+}

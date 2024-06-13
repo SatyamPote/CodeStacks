@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static 'registation.css' %}">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'videos/Login-Signup.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h2>Register</h2>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <form action="{% url 'registation' %}" method="post">
+            {% csrf_token %}
+            <div class="show-password">
+                <input type="text" name="username1" placeholder="Username" required>
+            </div>
+            <div class="show-password">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="show-password">
+                <input type="password" name="password1" placeholder="Password" required>
+            </div>
+            <div class="show-password">
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+            </div>
+            <center><input type="submit" value="Register"></center>
+        </form>
+        <div class="login-link">
+            <p>Already a member? <a href="{% url 'login' %}">Login Now</a></p>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.querySelector('.show-password input[type="password"]');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>
