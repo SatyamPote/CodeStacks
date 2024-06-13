@@ -1,8 +1,8 @@
-from django.shortcuts import redirect, render
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 
 # Create your views here.
 
@@ -22,10 +22,26 @@ def update_profile(request, user_id):
     user = get_object_or_404(User, id=user_id)
     if request.method == 'POST':
         email = request.POST.get('email')
+        current_password = request.POST.get('current_password')
+        new_password1 = request.POST.get('new_password1')
+        new_password2 = request.POST.get('new_password2')
+
         if email:
             user.email = email
             user.save()
+
+        if current_password and new_password1 and new_password2:
+            if not user.check_password(current_password):
+                return render(request, 'update_profile.html', {'user': user, 'error': 'Current password is incorrect'})
+            if new_password1 != new_password2:
+                return render(request, 'update_profile.html', {'user': user, 'error': 'New passwords do not match'})
+            user.set_password(new_password1)
+            user.save()
+            update_session_auth_hash(request, user)  # Keeps the user logged in after password change
             return redirect('home')
+
+        return redirect('home')
+
     return render(request, 'update_profile.html', {'user': user})
 
 
