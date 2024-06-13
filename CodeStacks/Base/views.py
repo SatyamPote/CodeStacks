@@ -9,6 +9,15 @@ from django.shortcuts import get_object_or_404, redirect, render
 def home(request):
     return render(request, 'home.html')
 
+def Subscription(request):
+    return render(request, 'Subscription.html')
+
+
+def Library(request):
+    return render(request, 'Library.html')
+
+
+
 from django.contrib.auth import logout as auth_logout
 
 def logout(request):

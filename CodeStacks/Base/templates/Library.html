@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="profile">
+                <a href="#">Profile</a>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="product-container">
+        <div class="product-image">
+            <img src="{% static 'product-image.jpg' %}" alt="Product Image">
+        </div>
+        <div class="product-info">
+            <h1 class="product-title">Product Title</h1>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <div class="product-price">
+                <p>$19.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        /* Product Container */
+.product-container {
+    max-width: 800px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-image {
+    flex-basis: 40%;
+    margin: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex-basis: 50%;
+    margin: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-price p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.add-to-cart {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #555;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .product-info {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+    </style>
+
+
+</body>
+</html>
