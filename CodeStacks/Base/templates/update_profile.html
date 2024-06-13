@@ -4,31 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Profile</title>
+    <title>Update Profile - Codestack</title>
     <link rel="stylesheet" href="{% static 'update_profile.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h2>Update Profile</h2>
-        {% if error %}
-            <div class="error">{{ error }}</div>
-        {% endif %}
-        <form action="{% url 'update_profile' user.id %}" method="post">
-            {% csrf_token %}
-            <div class="show-password">
+    <nav>
+        <span>Codestack</span>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Subscription</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+        <div class="profile">
+            {% if user.is_authenticated %}
+                <i class="fa-solid fa-user"></i>
+                <a href="{% url 'update_profile' user.id %}"></a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="update-profile-container">
+        <div class="centered-content">
+            <h2>Update Profile</h2>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            <form action="{% url 'update_profile' user.id %}" method="post">
+                {% csrf_token %}
                 <input type="email" name="email" value="{{ user.email }}" placeholder="Email" required>
-            </div>
-            <div class="show-password">
                 <input type="password" name="current_password" placeholder="Current Password">
-            </div>
-            <div class="show-password">
                 <input type="password" name="new_password1" placeholder="New Password">
-            </div>
-            <div class="show-password">
                 <input type="password" name="new_password2" placeholder="Confirm New Password">
-            </div>
-            <center><input type="submit" value="Update"></center>
-        </form>
+                <input type="submit" value="Update">
+            </form>
+        </div>
     </div>
 </body>
 </html>
