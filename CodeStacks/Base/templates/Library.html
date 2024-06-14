@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Library</title>
     <link rel="stylesheet" href="{% static 'Library.css' %}">
 </head>
 <body>
@@ -12,74 +12,52 @@
     <nav>
         <span>Codestack</span>
         <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'Library' %}">Library</a></li>
-            <li><a href="{% url 'Subscription' %}">Subscription</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Subscription</a></li>
             <li><a href="#">Collection</a></li>
             <li><a href="#">Support</a></li>
         </ul>
         <div class="profile">
-            {% if user.is_authenticated %}
-                <i class="fa-solid fa-user"></i>
-                <a href="{% url 'update_profile' user.id %}">Profile</a>
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-            {% endif %}
+            <a href="#">Login</a>
         </div>
     </nav>
 
-    <!-- Product Section -->
-    <div class="product-container">
-        <div class="card">
-            <div class="image_container">
-                <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
-            </div>
-            <div class="title">
-                <span>New brand name</span>
-            </div>
-            <div class="size">
-                <span>description</span>
-                <p>nae ergn rg eur hgiueriu gnergneirngesin gg sgsg srgsrgsrg</p>
-            </div>
-            <div class="action">
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="center-text">
+            <h1>Welcome to our Library</h1>
+            <p class="description">Explore our curated collection of books and resources. Find something that sparks your interest!</p>
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-container">
+            <!-- Product Cards -->
+            <div class="card">
+                <div class="image_container">
+                    <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
+                </div>
+                
+                <div class="title">
+                    <span>New brand name</span>
+                </div>
                 <div class="price">
                     <span>$299</span>
                 </div>
-                <button class="cart-button">
-                    <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                    <span>Add to cart</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-container">
-        <div class="card">
-            <div class="image_container">
-                <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
-            </div>
-            <div class="title">
-                <span>New brand name</span>
-            </div>
-            <div class="size">
-                <span>description</span>
-                <p>nae ergn rg eur hgiueriu gnergneirngesin gg sgsg srgsrgsrg</p>
-            </div>
-            <div class="action">
-                <div class="price">
-                    <span>$299</span>
+                <div class="description">
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat blandit urna, nec pretium felis mattis sed.</p>
                 </div>
-                <button class="cart-button">
-                    <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg>
-                    <span>Add to cart</span>
-                </button>
+                <div class="actions">
+                    <button class="Btn">
+                        Buy
+                        <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+                    </button>
+                </div>
             </div>
+            <!-- End of Product Cards -->
         </div>
+        <!-- End of Product Section -->
     </div>
-
+    <!-- End of Main Content -->
 </body>
 </html>

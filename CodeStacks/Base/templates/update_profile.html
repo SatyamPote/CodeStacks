@@ -35,7 +35,7 @@
             {% endif %}
             <form action="{% url 'update_profile' user.id %}" method="post">
                 {% csrf_token %}
-                <input type="email" name="email" value="{{ user.email }}" placeholder="Email" required>
+
                 <input type="password" name="current_password" placeholder="Current Password">
                 <input type="password" name="new_password1" placeholder="New Password">
                 <input type="password" name="new_password2" placeholder="Confirm New Password">

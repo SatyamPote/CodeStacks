@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import render
+from .models import Product
 
 # Create your views here.
 
@@ -16,7 +18,9 @@ def Subscription(request):
 def Library(request):
     return render(request, 'Library.html')
 
-
+def Library(request):
+    products = Product.objects.all()
+    return render(request, 'Library.html', {'products': products})
 
 from django.contrib.auth import logout as auth_logout
 

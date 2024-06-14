@@ -1,0 +1,156 @@
+/* Library.css */
+
+/* CSS for navigation bar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem; /* Adjust spacing between nav and product card */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.profile {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile a {
+    margin-left: 10px;
+}
+
+.profile .fa-user {
+    font-size: 30px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .profile {
+        margin-top: 10px; /* Add some space between navigation and profile */
+    }
+}
+
+/* CSS for card component */
+.card {
+    --bg-card: #27272a;
+    --primary: #6d28d9;
+    --primary-800: #4c1d95;
+    --primary-shadow: #2e1065;
+    --light: #d9d9d9;
+    --zinc-800: #18181b;
+    --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1rem;
+    width: 14rem;
+    background-color: var(--bg-card);
+
+    border-radius: 1rem;
+    margin-bottom: 2rem; /* Adjust space between product cards */
+}
+
+.image_container {
+    overflow: hidden;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 16rem;
+    background-color: transparent;
+
+    border-radius: 0.5rem;
+}
+
+.image_container .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.size {
+    font-size: 0.75rem;
+    color: var(--light);
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.cart-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    background-image: var(--bg-linear);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--light);
+    text-wrap: nowrap;
+    border: 2px solid hsla(262, 83%, 58%, 0.5);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.25rem 1px var(--light);
+}
+
+.cart-button .cart-icon {
+    width: 1rem;
+}
