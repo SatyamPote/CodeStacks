@@ -5,120 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'Library.css' %}">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
+        <span>Codestack</span>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class="profile">
-                <a href="#">Profile</a>
-                <i class="fa fa-user" aria-hidden="true"></i>
-            </li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'Library' %}">Library</a></li>
+            <li><a href="{% url 'Subscription' %}">Subscription</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Support</a></li>
         </ul>
+        <div class="profile">
+            {% if user.is_authenticated %}
+                <i class="fa-solid fa-user"></i>
+                <a href="{% url 'update_profile' user.id %}">Profile</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
     </nav>
 
     <!-- Product Section -->
     <div class="product-container">
-        <div class="product-image">
-            <img src="{% static 'product-image.jpg' %}" alt="Product Image">
-        </div>
-        <div class="product-info">
-            <h1 class="product-title">Product Title</h1>
-            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-            <div class="product-price">
-                <p>$19.99</p>
-                <button class="add-to-cart">Add to Cart</button>
+        <div class="card">
+            <div class="image_container">
+                <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
+            </div>
+            <div class="title">
+                <span>New brand name</span>
+            </div>
+            <div class="size">
+                <span>description</span>
+                <p>nae ergn rg eur hgiueriu gnergneirngesin gg sgsg srgsrgsrg</p>
+            </div>
+            <div class="action">
+                <div class="price">
+                    <span>$299</span>
+                </div>
+                <button class="cart-button">
+                    <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                    <span>Add to cart</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <style>
-
-        /* Product Container */
-.product-container {
-    max-width: 800px;
-    margin: 40px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.product-image {
-    flex-basis: 40%;
-    margin: 20px;
-}
-
-.product-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.product-info {
-    flex-basis: 50%;
-    margin: 20px;
-}
-
-.product-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.product-description {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.product-price {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.product-price p {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.add-to-cart {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: #555;
-}
-
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-image {
-        width: 100%;
-        margin: 20px auto;
-    }
-
-    .product-info {
-        width: 100%;
-        margin: 20px auto;
-    }
-}
-    </style>
-
+    <div class="product-container">
+        <div class="card">
+            <div class="image_container">
+                <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
+            </div>
+            <div class="title">
+                <span>New brand name</span>
+            </div>
+            <div class="size">
+                <span>description</span>
+                <p>nae ergn rg eur hgiueriu gnergneirngesin gg sgsg srgsrgsrg</p>
+            </div>
+            <div class="action">
+                <div class="price">
+                    <span>$299</span>
+                </div>
+                <button class="cart-button">
+                    <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                    <span>Add to cart</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
