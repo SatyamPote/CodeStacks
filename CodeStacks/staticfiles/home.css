@@ -1,4 +1,18 @@
-/* CSS for navigation bar */
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Navbar Styles */
 nav {
     background-color: #333;
     color: white;
@@ -8,13 +22,16 @@ nav {
     align-items: center;
 }
 
+nav span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allow items to wrap */
 }
 
 nav ul li {
@@ -28,6 +45,8 @@ nav ul li:last-child {
 nav a {
     color: white;
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -35,27 +54,111 @@ nav a:hover {
 }
 
 .profile {
-    margin-right: 20px;
     display: flex;
     align-items: center;
 }
 
 .profile a {
     margin-left: 10px;
+    font-size: 1.1rem;
+    color: white;
 }
 
 .profile .fa-user {
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .profile {
-        margin-top: 10px; /* Add some space between navigation and profile */
-    }
+/* Header Styles */
+header {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 80px 0;
 }
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Main Content Styles */
+section {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.book-list,
+.language-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.book,
+.language {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.book img,
+.language img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.book h3,
+.language h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.book p,
+.language p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.book span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4285f4;
+}
+
+.language a {
+    display: inline-block;
+    background-color: #000000;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.language a:hover {
+    background-color: #000000;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+

@@ -137,6 +137,16 @@ MEDIA_URL = '/media/'
 
 
 
+
+
+
+
+
+
+
+
+
+
 # Other settings ...
 
 STATIC_URL = '/static/'

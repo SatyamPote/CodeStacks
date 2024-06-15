@@ -1,4 +1,20 @@
-/* Library.css */
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 /* CSS for navigation bar */
 nav {
@@ -8,7 +24,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem; /* Adjust spacing between nav and product card */
 }
 
 nav ul {
@@ -47,10 +62,6 @@ nav a:hover {
     margin-left: 10px;
 }
 
-.profile .fa-user {
-    font-size: 30px;
-}
-
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
     nav {
@@ -61,6 +72,28 @@ nav a:hover {
     .profile {
         margin-top: 10px; /* Add some space between navigation and profile */
     }
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below centered text */
+}
+
+/* CSS for product section */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure cards wrap to next line */
+    gap: 20px; /* Adjust spacing between cards */
+    margin-top: 20px; /* Add margin on top of product container */
 }
 
 /* CSS for card component */
@@ -74,57 +107,38 @@ nav a:hover {
     --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
 
     position: relative;
-
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-
     padding: 1rem;
-    width: 14rem;
+    width: 100%; /* Adjusted width to fill container */
+    max-width: 300px; /* Added max-width to limit card width */
     background-color: var(--bg-card);
-
     border-radius: 1rem;
-    margin-bottom: 2rem; /* Adjust space between product cards */
+    margin: 0 1rem 2rem 1rem; /* Added margin for spacing between cards */
 }
 
 .image_container {
     overflow: hidden;
     cursor: pointer;
-
     position: relative;
-    z-index: 5;
-
     width: 100%;
-    height: 16rem;
-    background-color: transparent;
-
+    height: 18rem; /* Increased height to fill container properly */
     border-radius: 0.5rem;
 }
 
 .image_container .image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center; /* Center the image */
 }
 
 .title {
     font-size: 1rem;
     font-weight: 600;
     color: var(--light);
-}
-
-.size {
-    font-size: 0.75rem;
-    color: var(--light);
-}
-
-.action {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    text-transform: capitalize;
 }
 
 .price {
@@ -133,24 +147,68 @@ nav a:hover {
     color: var(--light);
 }
 
-.cart-button {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.5rem;
-    width: 100%;
-    background-image: var(--bg-linear);
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--light);
-    text-wrap: nowrap;
-    border: 2px solid hsla(262, 83%, 58%, 0.5);
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 0.25rem 1px var(--light);
+.description p {
+    color: #fff; /* Adjust text color as needed */
 }
 
-.cart-button .cart-icon {
-    width: 1rem;
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+}
+
+.Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        flex: 0 0 calc(33.333% - 2rem); /* Adjust width for 3 cards per row */
+    }
 }

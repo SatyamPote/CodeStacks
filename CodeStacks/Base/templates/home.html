@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Codestack</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
     <script src="https://kit.fontawesome.com/da1d489c94.js" crossorigin="anonymous"></script>
+    <style>
+        .book img,
+        .language img {
+            width: 200px; /* Adjust image width as needed */
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -20,16 +28,92 @@
         </ul>
         <div class="profile">
             {% if user.is_authenticated %}
-            <i class="fa-solid fa-user"></i>
-            <a href="{% url 'update_profile' user.id %}">Profile</a>
-
+                <i class="fa-solid fa-user"></i>
+                <a href="{% url 'update_profile' user.id %}">Profile</a>
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
             {% endif %}
         </div>
     </nav>
+
+    <header>
+        <h1>Welcome to Codestack Library</h1>
+        <p>Explore our vast collection of programming books!</p>
+    </header>
+
+
+
+    <section class="languages">
+        <h2>Featured Languages</h2>
+        <div class="language-list">
+            <div class="language">
+                <img src="https://media.istockphoto.com/id/1335247101/photo/computer-with-elements-of-program-code-on-the-screen-and-the-inscription-java-and-a-keyboard.jpg?s=612x612&w=0&k=20&c=Bv-Itt8vuuLBuJjm-YYvME9-_3qMpm_sOqAB7MtSads=" alt="Java">
+                <h3>Java</h3>
+                <p>Learn Java programming with our extensive collection of books.</p>
+                <a href="{% url 'Library' %}">View Books</a>
+            </div>
+            <div class="language">
+                <img src="https://www.shutterstock.com/image-photo/rust-systems-programming-language-focus-260nw-2297135049.jpg" alt="Rust">
+                <h3>Rust</h3>
+                <p>Explore Rust programming language books for beginners to advanced.</p>
+                <a href="{% url 'Library' %}">View Books</a>
+            </div>
+
+            <div class="language">
+                <img src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8r9l2listen3c4fmjwh2.jpg" alt="C">
+                <h3>C</h3>
+                <p>The foundational language renowned for its efficiency in system programming and embedded systems.</p>
+                <a href="{% url 'Library' %}">View Books</a>
+            </div>
+            
+            
+            <div class="language">
+                <img src="https://www.softzone.es/app/uploads-softzone.es/2022/03/programar-c.jpg" alt="C++">
+                <h3>C++</h3>
+                <p>A powerful language combining object-oriented and generic programming, ideal for high-performance applications and game development.</p>
+                <a href="{% url 'Library' %}">View Books</a>
+            </div>
+
+            
+            <div class="language">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png" alt="JavaScript">
+                <h3>JavaScript (JS)</h3>
+                <p>The language of the web, enabling interactive frontend development and server-side scripting with Node.js.</p>
+                <a href="{% url 'Library' %}">View Books</a>
+            </div>
+            
+            
+            <!-- Add more languages as needed -->
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Codestack</h2>
+        <div class="testimonial">
+            <p>" Your gateway to unlocking the vast world of programming knowledge, empowering you to build, create, and innovate"</p>
+            <cite>- Satyam Pote</cite>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </section>
+
+    <section class="article">
+        <h2>Featured Article</h2>
+        <div class="article-content">
+            <img src="https://as1.ftcdn.net/v2/jpg/05/30/78/48/1000_F_530784876_tVVLgkCNenjbjs8nNIucVZDN9YLoePdI.jpg" alt="Featured Article">
+            <div class="article-info">
+                <h3>Collection</h3>
+                <p>"Coming soon to Codestack: collection! Explore a curated collection of diverse programming books tailored for various specialties and interests. From foundational texts to advanced resources, discover the perfect companion for your programming journey."
+                </p>
+
+
+                <a href="{% url 'Support' %}">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer">
+        {% include 'footer.html' %}
+    </footer>
+
 </body>
-
-{% include 'footer.html' %}
-
 </html>
