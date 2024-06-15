@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing Page</title>
   <link rel="stylesheet" href="{% static 'Subscription.css' %}">
+  <script src="https://kit.fontawesome.com/da1d489c94.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
     <span>Codestack</span>
     <ul>
       <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="#">Library</a></li>
-      <li><a href="#">Subscription</a></li>
-      <li><a href="#">Collection</a></li>
-      <li><a href="#">Support</a></li>
+      <li><a href="{% url 'Library' %}">Library</a></li>
+      <li><a href="{% url 'Subscription' %}">Subscription</a></li>
+      <li><a href="{% url 'Collection' %}">Collection</a></li>
+      <li><a href="{% url 'Support' %}">Support</a></li>
     </ul>
     <div class="profile">
       {% if user.is_authenticated %}
-        <i class="fa-solid fa-user"></i>
-        <a href="{% url 'update_profile' user.id %}">Profile</a>
-        <a href="{% url 'logout' %}">Logout</a>
+      <i class="fa-solid fa-user"></i>
+      <a href="{% url 'update_profile' user.id %}">Profile</a>
+
       {% else %}
         <a href="{% url 'login' %}">Login</a>
       {% endif %}
@@ -64,4 +65,9 @@
     </div>
   </div>
 </body>
+
+
+{% include 'footer.html' %}
+
+
 </html>

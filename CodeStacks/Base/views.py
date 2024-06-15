@@ -14,9 +14,11 @@ def home(request):
 def Subscription(request):
     return render(request, 'Subscription.html')
 
+def Support(request):
+    return render(request, 'Support.html')
 
-def Library(request):
-    return render(request, 'Library.html')
+def Collection(request):
+    return render(request, 'Collection.html')
 
 def Library(request):
     products = Product.objects.all()

@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="{% static 'Library.css' %}">
+    <script src="https://kit.fontawesome.com/da1d489c94.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <span>Codestack</span>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">Subscription</a></li>
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'Library' %}">Library</a></li>
+            <li><a href="{% url 'Subscription' %}">Subscription</a></li>
+            <li><a href="{% url 'Collection' %}">Collection</a></li>
+            <li><a href="{% url 'Support' %}">Support</a></li>
         </ul>
         <div class="profile">
-            <a href="#">Login</a>
+            <i class="fa-solid fa-user"></i>
+                <a href="{% url 'update_profile' user.id %}">Profile</a>
+
         </div>
     </nav>
 
@@ -32,20 +35,20 @@
 
         <!-- Product Section -->
         <div class="product-container">
-            <!-- Product Cards -->
+            <!-- Loop through products -->
+            {% for product in products %}
             <div class="card">
                 <div class="image_container">
-                    <img src="{% static 'images/demo.png' %}" alt="Product Image" class="image">
+                    <img src="{{ product.image.url }}" alt="{{ product.title }}" class="image">
                 </div>
-                
                 <div class="title">
-                    <span>New brand name</span>
+                    <span>{{ product.title }}</span>
                 </div>
                 <div class="price">
-                    <span>$299</span>
+                    <span>${{ product.price }}</span>
                 </div>
                 <div class="description">
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat blandit urna, nec pretium felis mattis sed.</p>
+                    <p>Description: {{ product.description }}</p>
                 </div>
                 <div class="actions">
                     <button class="Btn">
@@ -54,10 +57,15 @@
                     </button>
                 </div>
             </div>
+            {% endfor %}
             <!-- End of Product Cards -->
         </div>
         <!-- End of Product Section -->
     </div>
     <!-- End of Main Content -->
 </body>
+
+
+{% include 'footer.html' %}
+
 </html>

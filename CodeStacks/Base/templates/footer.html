@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+</head>
+<body>
+    <footer id="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><a href="{% url 'home' %}">Codestack</a></h4>
+                <p>Copyright © 2022 <strong>Codestack</strong></p>
+                <br>
+                <p>Designed by <a href="https://codestack.com" target="_blank">Codestack</a></p>
+            </div>
+    
+            <div class="footer-section">
+                <h5>Sitemap</h5>
+                <ul>
+                    <li><a href="">Story</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Privacy policy</a></li>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h5>Social</h5>
+                <ul class="social">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
