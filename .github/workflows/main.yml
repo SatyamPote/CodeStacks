@@ -1,0 +1,4 @@
+steps:
+  - uses: actions/setup-python@v4
+    with:
+      python-version: '3.x'  # Replace with your desired Python version
