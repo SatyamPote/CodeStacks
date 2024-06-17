@@ -1,4 +1,48 @@
-steps:
-  - uses: actions/setup-python@v4
-    with:
-      python-version: '3.x'  # Replace with your desired Python version
+name: Django CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 20.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.x'
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install pip dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Django database migrations
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate --noinput
+
+      - name: Collect static files
+        run: python manage.py collectstatic --noinput
+
+      - name: Run Django tests
+        run: python manage.py test
+
+      - name: Clean up
+        run: |
+          deactivate  # Deactivate virtual environment if needed
+          rm -rf venv  # Remove virtual environment directory to ensure clean environment for next build
