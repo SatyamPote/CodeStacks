@@ -19,6 +19,18 @@ The project structure includes the following main components:
 - **CodeStacks/**: Django project directory.
 - **manage.py**: Django's command-line utility for administrative tasks.
 
+- ## Admin panel password
+
+To run the CodeStacks Django project locally, follow these steps:
+
+1. Admin Username:
+   ```bash
+   Satyam
+
+1. Admin Password:
+   ```bash
+   Satyam@123
+
 ## Running the Project
 
 To run the CodeStacks Django project locally, follow these steps:
