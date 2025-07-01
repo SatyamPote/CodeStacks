@@ -2,7 +2,6 @@
 
 CodeStacks is an open-source e-books website designed to help learners and developers access, share, and read a wide variety of programming e-books and resources — all in one place.
 
-🌐 **Live Demo**: [Add your deployed site link here]
 
 ---
 
@@ -40,11 +39,16 @@ CodeStacks is an open-source e-books website designed to help learners and devel
 
 ## 🖼️ Screenshots
 
+### 🏠 Home, 📚 Library, and 💳 Subscription
+
 <p align="center">
-  <img src="screenshots/homepage.png" alt="CodeStacks Homepage" width="80%">
+  <img src="https://github.com/user-attachments/assets/2271ba6d-99cc-4e5f-90f5-5ec18ec0291e" alt="Home Page" width="80%">
   <br>
-  <img src="screenshots/book-view.png" alt="Book View" width="80%">
+  <img src="https://github.com/user-attachments/assets/bef6aa99-ca97-447b-b98a-a2be8be9b5c9" alt="Library Page" width="80%">
+  <br>
+  <img src="https://github.com/user-attachments/assets/973edf56-195d-4fb3-a12c-b114172862bb" alt="Subscription Page" width="80%">
 </p>
+
 
 ---
 
@@ -139,6 +143,8 @@ See the `LICENSE` file for full details.
 ---
 
 ## 📬 Contact
+- **Email:** : satyampote9999@gmail.com
+- **Webside:** : https://satyampote.tech/
 
 Created and maintained by **SatyamPote**  
 For questions or suggestions: [Open an Issue](https://github.com/SatyamPote/CodeStacks/issues)
