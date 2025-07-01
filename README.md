@@ -1,50 +1,148 @@
-# CodeStacks.com
+# 📚 CodeStacks
 
-Welcome to the CodeStacks.com repository! This repository hosts premium programming books offered by CodeStacks, a platform dedicated to providing high-quality resources for developers.
+CodeStacks is an open-source e-books website designed to help learners and developers access, share, and read a wide variety of programming e-books and resources — all in one place.
 
-## About CodeStacks.com
+🌐 **Live Demo**: [Add your deployed site link here]
 
-CodeStacks.com is a specialized platform where you can find premium programming books covering a wide range of topics and technologies. Whether you're a beginner looking to learn the basics of programming or an experienced developer aiming to deepen your knowledge in specific areas, CodeStacks.com offers curated content to meet your needs.
+---
 
-## Repository Contents
+## 📖 Table of Contents
 
-This repository contains the following:
+- [About](#about)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- **Premium Programming Books**: High-quality eBooks covering various programming languages, frameworks, and topics relevant to developers.
+---
 
-## Project Structure
+## 🧠 About
 
-The project structure includes the following main components:
+**CodeStacks** is a community-driven platform for discovering and reading open-source e-books focused on programming, software development, and technology. The goal is to provide an easy-to-use, centralized hub of resources for students, developers, and self-learners alike.
 
-- **CodeStacks/**: Django project directory.
-- **manage.py**: Django's command-line utility for administrative tasks.
+---
 
-- ## Admin panel password
+## 🚀 Features
 
-To run the CodeStacks Django project locally, follow these steps:
+- 🔎 **Browse & Search** curated open-source programming e-books.
+- 🗂️ **Categories** for languages, frameworks, and technologies.
+- 🖥️ **Responsive Design** with a clean, user-friendly interface.
+- ⚡ **Powerful Search** to find books instantly.
+- 📤 **Contribute Easily** by adding or suggesting new e-books.
+- 🌓 **Dark/Light Mode** support (if enabled).
+- 💬 **Open Source & Community-Driven**
 
-1. Admin Username:
-   ```bash
-   Satyam
+---
 
-1. Admin Password:
-   ```bash
-   Satyam@123
+## 🖼️ Screenshots
 
-## Running the Project
+<p align="center">
+  <img src="screenshots/homepage.png" alt="CodeStacks Homepage" width="80%">
+  <br>
+  <img src="screenshots/book-view.png" alt="Book View" width="80%">
+</p>
 
-To run the CodeStacks Django project locally, follow these steps:
+---
 
-1. Navigate to the project directory:
-   ```bash
-   cd C:\Users\CodeStacks\CodeStacks
+## 🛠️ Tech Stack
 
-1. Run the project from:
-   ```bash
-   cd C:\Users\CodeStacks\CodeStacks>python manage.py runserver
+- **Backend:** Python (Flask / Django / FastAPI)
+- **Frontend:** HTML, CSS, JavaScript
+- **Other:** PowerShell, Batch scripts for automation
 
-### Contact:
-- [satyampote9999@gmail.com]
-- For primium contant
+---
 
+## ⚙️ Getting Started
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/SatyamPote/CodeStacks.git
+cd CodeStacks
+```
+
+### 2. Install Dependencies
+
+> Ensure you have Python 3.8+ installed.
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate it
+source venv/bin/activate     # On macOS/Linux
+venv\Scripts\activate        # On Windows
+
+# Install Python packages
+pip install -r requirements.txt
+```
+
+> ⚠️ For frontend dependencies (if using npm/yarn), include install steps here.
+
+### 3. Run the Application Locally
+
+```bash
+python app.py
+```
+
+Visit: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📁 Project Structure
+
+```text
+CodeStacks/
+├── static/             # Static assets (CSS, JS, images)
+├── templates/          # HTML templates
+├── ebooks/             # E-books & metadata
+├── scripts/            # PowerShell / Batch / utility scripts
+├── app.py              # Main application file
+├── requirements.txt    # Python dependencies
+└── README.md
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from everyone!  
+To contribute:
+
+```bash
+# Fork the repository
+# Create your branch:
+git checkout -b feature/AmazingFeature
+
+# Commit your changes:
+git commit -m 'Add some AmazingFeature'
+
+# Push to GitHub:
+git push origin feature/AmazingFeature
+```
+
+Then open a **Pull Request**.
+
+> For large changes, please [open an issue](https://github.com/SatyamPote/CodeStacks/issues) first to discuss the proposed update.
+
+---
+
+## 📝 License
+
+Distributed under the **MIT License**.  
+See the `LICENSE` file for full details.
+
+---
+
+## 📬 Contact
+
+Created and maintained by **SatyamPote**  
+For questions or suggestions: [Open an Issue](https://github.com/SatyamPote/CodeStacks/issues)
+
+---
+
+**Happy Reading! 📖✨**
